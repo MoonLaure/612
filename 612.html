@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>B612 Planet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ⏳ Loading 畫面 -->
+<div id="loading">
+  <h2>Loading B612...</h2>
+  <div class="progress-bar">
+    <div id="progress"></div>
+  </div>
+</div>
+
+<!-- 🌌 星空背景 -->
+<div class="stars"></div>
+
+<div id="app">
+
+  <section class="screen active" id="start">
+    <h1>歡迎來到 B612</h1>
+    <p>（開場文字自己填）</p>
+    <button onclick="goTo('q1')">開始探索</button>
+  </section>
+
+  <section class="screen" id="q1">
+    <h2>第一個問題</h2>
+    <p>（題目自己填）</p>
+    <button onclick="goTo('pathA')">選項 A</button>
+    <button onclick="goTo('pathB')">選項 B</button>
+  </section>
+
+  <section class="screen" id="pathA">
+    <h2>你選擇了 A</h2>
+    <button onclick="goTo('ending1')">繼續</button>
+  </section>
+
+  <section class="screen" id="pathB">
+    <h2>你選擇了 B</h2>
+    <button onclick="goTo('ending2')">繼續</button>
+  </section>
+
+  <section class="screen" id="ending1">
+    <h2>結局 1</h2>
+    <button onclick="goTo('start')">重新開始</button>
+  </section>
+
+  <section class="screen" id="ending2">
+    <h2>結局 2</h2>
+    <button onclick="goTo('start')">重新開始</button>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

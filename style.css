@@ -1,0 +1,101 @@
+body{
+  margin:0;
+  font-family:"Microsoft JhengHei";
+  background:black;
+  color:white;
+  overflow:hidden;
+}
+
+/* 🌌 星空 */
+.stars{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:url("https://www.transparenttextures.com/patterns/stardust.png");
+  animation:moveStars 120s linear infinite;
+  z-index:-1;
+}
+@keyframes moveStars{
+  from{background-position:0 0;}
+  to{background-position:10000px 5000px;}
+}
+
+/* ⏳ Loading */
+#loading{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:black;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.progress-bar{
+  width:300px;
+  height:10px;
+  border:1px solid white;
+  margin-top:20px;
+}
+#progress{
+  height:100%;
+  width:0%;
+  background:white;
+}
+
+/* 📺 畫面區 */
+#app{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.screen{
+  display:none;
+  max-width:600px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.6s;
+}
+
+.screen.active{
+  display:block;
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* 🔘 立體按鈕 */
+button{
+  margin:15px;
+  padding:14px 28px;
+  font-size:16px;
+  color:white;
+  background:#111;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  box-shadow:
+      0 5px 0 #fff,
+      0 5px 15px rgba(255,255,255,0.3);
+  transition:0.15s;
+}
+
+/* hover 浮起 */
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:
+      0 7px 0 #fff,
+      0 10px 20px rgba(255,255,255,0.4);
+}
+
+/* 按下去的壓感 */
+button:active{
+  transform:translateY(5px);
+  box-shadow:
+      0 0 0 #fff,
+      0 2px 5px rgba(255,255,255,0.3);
+}
